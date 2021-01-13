@@ -1,0 +1,137 @@
+.flex(@direction:row;@wrap:initial;@justify:initial;@align-items:initial;){
+    display:flex;
+    flex-direction:@direction;
+    flex-wrap:@wrap;
+    justify-content:@justify;
+    align-items:@align-items;
+}
+.center-by-position(@top:50%;@left:50%;){
+    position: absolute;
+    top: @top;
+    left: @left;
+    transform:translate(-50%,-50%);
+}
+.center-by-table(){
+    display: table-cell;
+    vertical-align: middle;
+}
+.center-w(@top:0;@bottom:0){
+    margin:0 auto;
+    margin-top:@top;
+    margin-bottom:@bottom;
+}
+.position(@type:relative;@top:auto;@right:auto;@bottom:auto;@left:auto){
+    position:@type;
+    top:@top;
+    right:@right;
+    bottom:@bottom;
+    left:@left;
+}
+.text-wrap{
+    word-break:break-all;
+    white-space:normal;
+    word-wrap:break-word;
+}
+.text-nowrap{
+    white-space:nowrap;
+}
+.text-ellipsis{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.bg-image(@url;@size;@position;@repeat){
+    background:url(@url);
+    background-size: @size;
+    background-position:@position;
+    background-repeat: @repeat;
+}
+// h:水平 v:垂直
+.space(@direction;@size:12px;) when(@direction='h'){
+    &:not(:first-child){
+        margin-left:@size
+    }
+}
+.space(@direction;@size:12px;) when(@direction='v'){
+    &:not(:first-child){
+        margin-top:@size
+    }
+}
+.radius(@size;){
+    border-radius:@size;
+}
+.radius(@size;@where;) when(@where='top'){
+    border-top-left-radius:@size;
+    border-top-right-radius:@size;
+}
+.radius(@size;@where;) when(@where='bottom'){
+    border-bottom-left-radius:@size;
+    border-bottom-right-radius:@size;
+}
+.radius(@size;@where;) when(@where='left'){
+    border-top-left-radius:@size;
+    border-bottom-left-radius:@size;
+}
+.radius(@size;@where;) when(@where='right'){
+    border-top-right-radius:@size;
+    border-bottom-right-radius:@size;
+}
+.radius(@size;@where;) when(@where='top-left'){
+    border-top-left-radius:@size;
+}
+.radius(@size;@where;) when(@where='top-right'){
+    border-top-right-radius:@size;
+}
+.radius(@size;@where;) when(@where='bottom-left'){
+    border-bottom-left-radius:@size;
+}
+.radius(@size;@where;) when(@where='bottom-right'){
+    border-bottom-right-radius:@size;
+}
+.border(@params;){
+    border:@params;
+}
+.border(@params;@where;) when(@where='top'){
+    border-top:@params;
+}
+.border(@params;@where;) when(@where='bottom'){
+    border-bottom:@params;
+}
+.border(@params;@where;) when(@where='left'){
+    border-left:@params;
+}
+.border(@params;@where;) when(@where='right'){
+    border-right:@params;
+}
+.border(@params;@where;) when(@where='top-left'){
+    border-top:@params;
+    border-left:@params;
+}
+.border(@params;@where;) when(@where='top-right'){
+    border-top:@params;
+    border-right:@params;
+}
+.border(@params;@where;) when(@where='bottom-left'){
+    border-bottom:@params;
+    border-left:@params;
+}
+.border(@params;@where;) when(@where='bottom-right'){
+    border-bottom:@params;
+    border-right:@params;
+}
+.divider(@direction;@params) when(@direction='h'){
+    &:not(:first-child){
+        border-left:@params;
+    }
+}
+.divider(@direction;@params) when(@direction='v'){
+    &:not(:first-child){
+        border-top:@params;
+    }
+}
+.nomargin{
+    margin:0 !important;
+}
+.nopadding{
+    padding:0 !important;
+}

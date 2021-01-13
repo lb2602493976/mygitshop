@@ -1,0 +1,43 @@
+export default {
+    name:'个人中心',
+    path:'/personalCenter',
+    component:()=>import('@/views/shop/personal/index.vue'),
+    children:[
+        {
+            name:'个人中心-我的信息',
+            path:'myInfo',
+            component:()=>import('@/views/shop/personal/myInfo.vue'),
+        },
+        {
+            name:'个人中心-修改信息',
+            path:'editInfo',
+            component:()=>import('@/views/shop/personal/editInfo.vue'),
+        },
+        {
+            name:'个人中心-我的积分',
+            path:'myPoint',
+            component:()=>import('@/views/shop/personal/myPoint.vue'),
+        },
+        {
+            name:'个人中心-充值',
+            path:'recharge',
+            component:()=>import('@/views/shop/personal/recharge.vue'),
+        },
+        {
+            name:'个人中心-充值历史',
+            path:'rechargeHistory',
+            component:()=>import('@/views/shop/personal/rechargeHistory.vue'),
+            
+        },
+        {
+            name:'个人中心-我的订单',
+            path:'myOrder',
+            component:()=>import('@/views/shop/personal/myOrder.vue'),
+        },
+        {
+            path:'',
+            exact:true,
+            redirect:'/personalCenter/myInfo',
+        },
+    ],
+}

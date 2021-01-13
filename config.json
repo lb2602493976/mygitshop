@@ -1,0 +1,6 @@
+{
+    "registryName": "registry.cn-hangzhou.aliyuncs.com/shundot/thesismall",
+    "type": "front",
+    "para": "-p 9008:8080",
+    "containerName": "thesismall"
+}
